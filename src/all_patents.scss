@@ -1,0 +1,22 @@
+.content {
+  background-color: var(--color-bege);
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .title {
+    color: var(--color-brown);
+    &::after {
+      background-color: var(--color-brown);
+    }
+  }
+}
+
+.patents__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+}

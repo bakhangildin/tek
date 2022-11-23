@@ -1,0 +1,197 @@
+.content {
+  background-color: var(--color-gray);
+  min-height: 100vh;
+  .title {
+    color: var(--color-brown);
+    background-color: var(--color-bege);
+    padding: 2rem;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 4rem);
+  }
+}
+.content__wrapper {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .slideshow {
+    // min-width: 350px;
+    width: 40%;
+    // max-height: 500px;
+  }
+
+  //   ...
+  .mySlides {
+    display: none;
+  }
+  img {
+    vertical-align: middle;
+    background: linear-gradient(
+      180deg,
+      #ffffff 82.44%,
+      rgba(0, 0, 0, 0) 143.56%
+    );
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 1rem;
+    padding: 2.5rem 1rem 0.5rem 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 30%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  /* The dots/bullets/indicators */
+  .dots {
+    display: none;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: var(--color-bege);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: var(--color-bege-hover);
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+      font-size: 11px;
+    }
+  }
+  // ...
+
+  .description {
+    width: 50%;
+    color: var(--color-bege);
+  }
+}
+
+.buttons__wrapper {
+  padding-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  overflow: hidden;
+  .button {
+    color: var(--color-bege);
+    transition: color 400ms ease;
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    &:hover {
+      color: var(--color-bege-hover);
+    }
+  }
+  .button__left {
+    position: relative;
+    text-decoration: none;
+    p {
+      text-align: left;
+    }
+    &::before {
+      padding-right: 1rem;
+      content: "\2190";
+      top: 0;
+      bottom: 0;
+    }
+  }
+  .button__right {
+    text-decoration: none;
+    p {
+      text-align: right;
+    }
+    &::after {
+      padding-left: 0.5rem;
+      content: "\2192";
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content__wrapper {
+    display: flex;
+    flex-direction: column;
+    .slideshow {
+      width: 100%;
+    }
+    .description {
+      width: 100%;
+    }
+  }
+
+  .buttons__wrapper {
+    gap: 0.5rem;
+  }
+}
