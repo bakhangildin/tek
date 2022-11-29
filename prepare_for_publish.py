@@ -16,6 +16,7 @@ def main():
             remove_comments=True,
             remove_empty_space=True
         )
+        res = code
         try:
             prod.joinpath(path.split("/")[-1]).write_text(res, "cp1251")
         except:
