@@ -13,17 +13,6 @@ const modal = document.querySelector("dialog");
 open_btn.addEventListener("click", () => {
   document.body.classList.add("disable-scroll");
   modal.showModal();
-
-  const form = document.querySelector("form");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const form_url =
-      "https://script.google.com/macros/s/AKfycbw39Pmkl9IUw2Y1y6h2n6HNeK2TTrL9E_EBcirbS-nDUtNpK6yPh6Gv-fMBytZIBBmvGg/exec";
-    console.log(e.target);
-    const url = `${form_url}?name=${e.target.name.value}&email=${e.target.email.value}&phone=${e.target.phone.value}&message=${e.target.message.value}`;
-    window.open(encodeURI(url), "_blank");
-  });
 });
 
 modal.addEventListener("click", (e) => {
@@ -48,4 +37,15 @@ modal.addEventListener("keydown", (e) => {
     document.body.classList.remove("disable-scroll");
     modal.close();
   }
+});
+
+const forms = document.querySelectorAll("form");
+forms.forEach((form, index) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form_url =
+      "https://script.google.com/macros/s/AKfycbypRpkOz2cyc6LnTYUD4S4docU_Q51I32lM5Qzhe2aIAjxB9PRiHnSCr5dbWQP465pv/exec";
+    const url = `${form_url}?name=${e.target.name.value}&email=${e.target.email.value}&phone=${e.target.phone.value}&message=${e.target.message.value}`;
+    window.open(encodeURI(url), "_blank");
+  });
 });
